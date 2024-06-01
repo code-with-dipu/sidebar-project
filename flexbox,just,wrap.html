@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #colour{
+        height: 300px;
+        width: 80%;
+        border: 3px solid black;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap:wrap;
+        background-color: azure;
+        margin: 10px auto;
+        align-items:baseline;
+    }
+    #colour div{
+        height: 50px;
+        width: 300px;
+        color: white;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    #black{
+        flex-basis: 400px;
+    }
+</style>
+<body>
+    <div id="colour">
+        <div style="background-color: rgb(161, 10, 161);">vilate</div>
+        <div style="background-color: indigo;">indigo</div>
+        <div style="background-color: red;">red</div>
+        <div style="background-color: blue;">blue</div>
+        <div style="background-color: green;">green</div>
+        <div style="background-color: yellow; height: 100px;">yellow</div>
+        <div id="black" style="background-color: black;">black</div>
+    </div>
+</body>
+</html>

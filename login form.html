@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login form</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: aqua;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .container{
+        position: relative;
+        margin-top: 100px;
+        width: 400px;
+        height: auto;
+        background: rgb(217, 232, 235);
+        border-radius: 20px;
+    }
+    .lable{
+        padding: 20px 80px;
+        font-size:35px ;
+        font-weight: bolder;
+        color: blue;
+    }
+    .login-form{
+        padding: 20px 40px;
+        
+    }
+    .login-form .font{
+        font-size: 20px;
+        color: rgb(255, 0, 238);
+        margin: 10px 0;
+    }
+    .login-form .font2{
+        margin-top: 30px;
+    }
+    .login-form button{
+        margin: 45px 0 30px 0;
+        height: 45px;
+        width: 305px;
+        font-size: 20px;
+        color: rgb(219, 22, 38);
+        outline: none;
+        cursor:pointer;
+        background:rgb(234, 235, 217) ;
+        border-radius: 3PX;
+        border: 1PX solid violet;
+        transition: 5s;
+    }
+    .login-form button:hover{
+        background:pink ;
+    }
+    .login-form .email_error,
+    .login-form .pass_error{
+        margin-top: 5px;
+        width: 345px;
+        font-size:18px ;
+        color: aquamarine;
+        background:rgba(255,0,0,0.1);
+        text-align: center;
+        padding: 5px 8px;
+        border-radius: 3px;
+        border: 1px solid #EF9A9A;
+        display: none;
+
+
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="lable">user login</h1>
+        <form class="login-form" method="post" name="form" onsubmit="return validated()">
+            <div class="font">Email or phone</div>
+            <input autocomplete="off"type="text" name="Email">
+            <div id="email_error">please fill up your Email or phone</div>
+            <div class="font font2">password</div>
+            <input type="password" name="password">
+            <div id="pass_error">please fill up your password</div>
+            <button type="submit">LOGIN</button>
+            
+        </form>
+
+    </div>
+    <script>
+        var email=document.forms['form']['email'];
+        var password=document.forms['form']['password'];
+
+        var email_error=document.getElementById('email_error');
+        var pass_error=document.getElementById('pass_error');
+
+        email.addEventListener('textInput',email_Verify);
+        password.addEventListener('textInput',pass_Verify);
+
+
+        function validated(){
+            if(email.value.length < 9){
+                email.style.border="1px solid red";
+                email_error.style.display="block";
+                email.focus();
+                return false;
+            }
+            if(password.value.length < 6){
+                password.style.border="1px solid red";
+                password.style.display="block";
+                password.focus();
+                return false;
+            }
+        }
+        function email_Verify(){
+        if(email.value.length >= 8){
+                email.style.border="1px solid red";
+                email_error.style.display="none";
+                return true;
+        }
+
+        }
+        function pass_Verify(){
+        if(password.value.length >= 8){
+                password.style.border="1px solid silver";
+                pass.style.display="none";
+                return true;
+        }
+
+        }
+    </script>
+</body>
+</html>

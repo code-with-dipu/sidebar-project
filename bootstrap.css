@@ -1,0 +1,10 @@
+.container{
+    background-color: rgb(215, 221, 204);
+    margin-left: 50px;
+}
+.alert{
+    width: 600px;
+}
+.nav{
+    background-color: rgb(127, 255, 146);
+}
